@@ -6,10 +6,10 @@ CFLAGS = -Wall -g
 TARGET = first_program
 
 # Define source files
-SRCS = main.c foo.c bar.c
+SRCS = main.cpp foo.cpp bar.cpp
 
 # Define object files
-OBJS = $(SRCS:.c=.o)
+OBJS = $(SRCS:.cpp=.o)
 
 # Default target
 all: $(TARGET)
@@ -19,7 +19,7 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS)
 
 # Rule to compile source files into object files
-%.o: %.c
+%.o: %.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 # Rule to clean the build
